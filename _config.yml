@@ -1,0 +1,10 @@
+---
+  layout: base
+  title: css tips
+
+  css:
+    - assets/css/global.css
+
+  js:
+    - assets/js/main.js
+---
