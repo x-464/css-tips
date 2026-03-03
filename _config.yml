@@ -3,7 +3,3 @@ defaults:
       path: ""
     values: 
       layout: base
-    css:
-      - assets/css/global.css
-    js:
-      - assets/js/main.js

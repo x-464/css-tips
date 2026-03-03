@@ -1,1 +1,5 @@
 cheat sheet.docx
+_site/
+Gemfile.lock
+.jekyll-cache/
+auth.php
