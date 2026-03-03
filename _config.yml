@@ -1,10 +1,9 @@
----
-  layout: base.html
-  title: css tips
-
+defaults:
+  - scope:
+    path: ""
+  values: 
+    layout: base
   css:
     - assets/css/global.css
-
   js:
     - assets/js/main.js
----
