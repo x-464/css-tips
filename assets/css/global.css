@@ -1,3 +1,7 @@
+:root{
+    --indent: 0;
+}
+
 body{
     margin: 0px 30vw;
     height: 100vh;
@@ -16,6 +20,10 @@ h1, h2, h3, h4, h5, h6, input, ul, ol, summary{
     font-style: unset;
     font-weight: 300;
     font-family: "Bricolage Grotesque";
+}
+
+details{
+    margin-left: calc(var(--indent) * 1.5rem);
 }
 
 .taskSel{
