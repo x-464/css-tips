@@ -1,7 +1,7 @@
 <ul>
-    <li>Default Setup
+    <li><strong>Default Setup</strong>
         <ul>
-            <li>Dynamic title and CSS loading:
+            <li><strong>Dynamic title and CSS loading:</strong>
                 <ul>
                     <li>$title = "TITLE NAME IN HERE";</li>
                     <li>$cssIncludes = ["CSS FILE HERE", "CSS FILE HERE", etc];</li>
@@ -10,13 +10,13 @@
         </ul>
     </li>
 
-    <li>Page Components
+    <li><strong>Page Components</strong>
         <ul>
-            <li>Header
+            <li><strong>Header</strong>
                 <ul>
                     <li>Page start (with !)</li>
                     <li>session_start() if not exists</li>
-                    <li>Make CSRF token if not exists
+                    <li><strong>Make CSRF token if not exists</strong>
                         <ul>
                             <li>$_SESSION['csrf_token'] = bin2hex(random_bytes(32));</li>
                             <li>Check $_POST token against $_SESSION token before any server stuff</li>
@@ -28,7 +28,7 @@
                     <li>Include db_connect</li>
                 </ul>
             </li>
-            <li>Footer
+            <li><strong>Footer</strong>
                 <ul>
                     <li>Cap off body and html found in header</li>
                 </ul>
@@ -37,7 +37,7 @@
         </ul>
     </li>
 
-    <li>Pages Needed
+    <li><strong>Pages Needed</strong>
         <ul>
             <li>Login</li>
             <li>Signup</li>
@@ -47,9 +47,9 @@
         </ul>
     </li>
 
-    <li>Things to Remember
+    <li><strong>Things to Remember</strong>
         <ul>
-            <li>ARIA Labels
+            <li><strong>ARIA Labels</strong>
                 <ul>
                     <li>aria-label: Gives the (non-descriptive) element a descriptive label for the screen reader</li>
                     <li>aria-labelledby: Lets a different element label this element</li>
@@ -64,12 +64,12 @@
                     <li>aria-live (off, polite, assertive): Changes screen reader behaviour; polite waits until user stops interacting to give updates, assertive interrupts</li>
                 </ul>
             </li>
-            <li>Headings
+            <li><strong>Headings</strong>
                 <ul>
                     <li>h1, h2, etc are important to let screen readers skip to important headings</li>
                 </ul>
             </li>
-            <li>Semantic HTML
+            <li><strong>Semantic HTML</strong>
                 <ul>
                     <li>&lt;header&gt;, &lt;main&gt;, etc are just as important for the same reason</li>
                 </ul>
