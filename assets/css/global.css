@@ -1,19 +1,23 @@
 body{
-    margin: 0;
+    margin: 0px 30vw;
     height: 100vh;
     background-color: rgb(20, 22, 27);
     color: white;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     /* justify-content: center; */
 }
 
-h1, h2, h3, h4, h5, h6, input, ul, ol{
+h1, h2, h3, h4, h5, h6, input, ul, ol, summary{
     margin: 0;
     font-size: 1.1rem;
     font-style: unset;
     font-weight: 300;
     font-family: "Bricolage Grotesque";
+}
+
+.taskSel{
+    align-self: center;
 }
