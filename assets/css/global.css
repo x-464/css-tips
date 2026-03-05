@@ -3,8 +3,8 @@
 }
 
 body{
-    margin: 0px 30vw;
-    margin-bottom: 50vh;
+    padding: 0px 30vw 50vh;
+    /* margin-bottom: 50vh; */
     height: 100vh;
     background-color: rgb(20, 22, 27);
     color: white;
@@ -39,7 +39,7 @@ li{
     background-color: rgb(55, 60, 73);
     border-radius: 10px;
     border: unset;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     font-family: "Bricolage Grotesque";
     cursor: pointer;
