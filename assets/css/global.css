@@ -21,14 +21,12 @@ h1, h2, h3, h4, h5, h6, input, ul, ol, summary{
     font-family: "Bricolage Grotesque";
 }
 
-details{
-    margin-left: calc(var(--indent) * 1.5rem);
-    margin-bottom: 10px;
-    cursor: pointer;
+ul, ol{
+    margin-bottom: 5px;
 }
 
-ul{
-    margin-bottom: 5px;
+li{
+    margin-bottom: 2px;
 }
 
 .taskSel{
