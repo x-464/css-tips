@@ -4,7 +4,6 @@
 
 body{
     padding: 0px 30vw 50vh;
-    /* margin-bottom: 50vh; */
     height: 100vh;
     background-color: rgb(20, 22, 27);
     color: white;
@@ -43,4 +42,8 @@ li{
     color: white;
     font-family: "Bricolage Grotesque";
     cursor: pointer;
+}
+
+.taskWrapper{
+    margin-bottom: 50vh;
 }
