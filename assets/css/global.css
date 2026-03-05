@@ -31,4 +31,11 @@ li{
 
 .taskSel{
     align-self: center;
+    margin: 20px 0px;
+}
+.tasks{
+    padding: 10px 20px;
+    background-color: rgb(55, 60, 73);
+    border-radius: 10px;
+    border: unset;
 }
