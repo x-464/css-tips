@@ -25,6 +25,11 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
 .taskSel{
     align-self: center;
     margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
 }
 .tasks{
     padding: 15px 30px;
