@@ -1,230 +1,80 @@
 <ul>
-    <li>The Overview
+    <li>Default Setup
         <ul>
-            <li><input type="checkbox"> Who are they</li>
-            <li>What they want</li>
-            <li>Key functionality overview</li>
-        </ul>
-    </li>
-
-    <li>User Personas
-        <ul>
-            <li>What are user personas and why are they necessary?</li>
-            <li>3 Personas
-                <ol>
-                    <li>A regular user</li>
-                    <li>A worker</li>
-                    <li>An older person, less tech savvy</li>
-                </ol>
-            </li>
-        </ul>
-    </li>
-
-    <li>Potential Competitors
-        <ul>
-            <li>Show 5+ competitors
+            <li>Dynamic title and CSS loading:
                 <ul>
-                    <li>Link to their website</li>
-                    <li>Overview</li>
-                    <li>Features</li>
-                    <li>Design Language</li>
+                    <li>$title = "TITLE NAME IN HERE";</li>
+                    <li>$cssIncludes = ["CSS FILE HERE", "CSS FILE HERE", etc];</li>
                 </ul>
             </li>
-            <li>What I can learn from them or improve upon</li>
         </ul>
     </li>
 
-    <li>Design Language
+    <li>Page Components
         <ul>
-            <li>WCAG
+            <li>Header
                 <ul>
-                    <li>Contrast Levels (AA, AAA)</li>
-                    <li>POUR Abbreviation
+                    <li>Page start (with !)</li>
+                    <li>session_start() if not exists</li>
+                    <li>Make CSRF token if not exists
                         <ul>
-                            <li>Perceivable</li>
-                            <li>Operable</li>
-                            <li>Understandable</li>
-                            <li>Robust</li>
+                            <li>$_SESSION['csrf_token'] = bin2hex(random_bytes(32));</li>
+                            <li>Check $_POST token against $_SESSION token before any server stuff</li>
+                            <li>Use hash_equals(arg1, arg2) to stop timing attacks</li>
+                            <li>Token must be sent in POST request as a hidden input</li>
+                            <li>Unset token after successful validation to stop reuse</li>
                         </ul>
                     </li>
+                    <li>Include db_connect</li>
                 </ul>
             </li>
-            <li>Colour Palettes
+            <li>Footer
                 <ul>
-                    <li>Give 3+ palettes, 3 main colours are easiest (black, white, highlight)
-                        <ul>
-                            <li>Will use slight deviations of these colours, necessary for hover, focus, active, disabled etc</li>
-                            <li>Can justify with simplicity (design trend) and accessibility</li>
-                        </ul>
-                    </li>
-                    <li>Use a contrast checker for text (https://webaim.org/resources/contrastchecker/)</li>
-                    <li>High contrast colours for persona 3</li>
+                    <li>Cap off body and html found in header</li>
                 </ul>
             </li>
-            <li>Fonts
-                <ul>
-                    <li>Show 3 – 5 fonts for both serif and sans-serif</li>
-                    <li>Show demo of fonts</li>
-                    <li>Give a short description and how you feel about them</li>
-                    <li>Font Choice
-                        <ul>
-                            <li>Link back to persona 3, easy reading etc</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Trust Signals
-                <ul>
-                    <li>Reviews</li>
-                    <li>Social media links</li>
-                    <li>Contact information</li>
-                </ul>
-            </li>
+            <li>db_connect</li>
         </ul>
     </li>
 
-    <li>Functional Requirements
+    <li>Pages Needed
         <ul>
-            <li>User accounts
-                <ul>
-                    <li>Sign up</li>
-                    <li>Login</li>
-                    <li>Dashboard</li>
-                </ul>
-            </li>
-            <li>Staff accounts (persona 2)
-                <ul>
-                    <li>Sign up</li>
-                    <li>Login</li>
-                    <li>Dashboard</li>
-                </ul>
-            </li>
-            <li>Management accounts (persona 2)
-                <ul>
-                    <li>Sign up</li>
-                    <li>Login</li>
-                    <li>Bookings</li>
-                    <li>Dashboard</li>
-                </ul>
-            </li>
-            <li>Purchases</li>
+            <li>Login</li>
+            <li>Signup</li>
+            <li>Home</li>
+            <li>Product overview etc</li>
+            <li>Booking</li>
         </ul>
     </li>
 
-    <li>Non-Functional Requirements
+    <li>Things to Remember
         <ul>
-            <li>Security
+            <li>ARIA Labels
                 <ul>
-                    <li>CSRF Tokens</li>
-                    <li>Use hash_equals() to stop timing attacks related to ===</li>
-                    <li>htmlspecialchars() on user inputs/$_GET requests</li>
-                    <li>Email validation</li>
-                    <li>Password rules</li>
-                    <li>Password hashing</li>
-                    <li>HTTPS</li>
-                    <li>SQL injection prevention by using '?' placeholders in PDO requests</li>
-                    <li>Pages protected via user access levels set at account creation</li>
+                    <li>aria-label: Gives the (non-descriptive) element a descriptive label for the screen reader</li>
+                    <li>aria-labelledby: Lets a different element label this element</li>
+                    <li>aria-describedby: Points to another element's ID for the description of this element</li>
+                    <li>aria-expanded: True or false for if a menu is expanded</li>
+                    <li>aria-hidden: Screen reader will ignore this object</li>
+                    <li>aria-invalid: Tells the user if an inputted value is invalid (and potentially why, like grammar, spelling, etc)</li>
+                    <li>aria-required: Tells the user this input field is required</li>
+                    <li>aria-pressed/checked: Tells the user if this element is pressed or checked</li>
+                    <li>aria-disabled: Tells the user if this element is disabled</li>
+                    <li>aria-role: Tells the user what kind of role this element fulfils (navigation, button)</li>
+                    <li>aria-live (off, polite, assertive): Changes screen reader behaviour; polite waits until user stops interacting to give updates, assertive interrupts</li>
                 </ul>
             </li>
-            <li>Performance</li>
-            <li>Usability</li>
-            <li>Accessibility
+            <li>Headings
                 <ul>
-                    <li>Semantic HTML</li>
-                    <li>ARIA</li>
-                    <li>Images (alt tags)</li>
-                    <li>Colours</li>
-                    <li>(persona 3)</li>
+                    <li>h1, h2, etc are important to let screen readers skip to important headings</li>
                 </ul>
             </li>
-        </ul>
-    </li>
-
-    <li>Wireframes
-        <ul>
-            <li>Show all necessary wireframes
+            <li>Semantic HTML
                 <ul>
-                    <li>Link</li>
-                    <li>Image</li>
-                    <li>Description</li>
+                    <li>&lt;header&gt;, &lt;main&gt;, etc are just as important for the same reason</li>
                 </ul>
             </li>
-        </ul>
-    </li>
-
-    <li>Algorithms
-        <ul>
-            <li>Show all necessary flowcharts</li>
-        </ul>
-    </li>
-
-    <li>Backend
-        <ul>
-            <li>3 types of database relationships
-                <ul>
-                    <li><strong>One to One:</strong> One record in one table links to another record in another table. The one is usually called a primary key.</li>
-                    <li><strong>One to Many:</strong> One record in one table links to multiple records in another table. The many is usually called a foreign key.</li>
-                    <li><strong>Many to Many:</strong> Multiple records in one table links to multiple records in another table. This requires a junction table.</li>
-                </ul>
-            </li>
-            <li>Database table designs (excel)</li>
-        </ul>
-    </li>
-
-    <li>Legal Requirements
-        <ul>
-            <li>GDPR/DPA</li>
-            <li>PECR (Cookie Policies)</li>
-            <li>Consumer protection laws</li>
-            <li>Anti-spam protection laws</li>
-            <li>Equality Act 2010</li>
-            <li>IP/Copyright laws</li>
-        </ul>
-    </li>
-
-    <li>Development Plan
-        <ul>
-            <li>Gantt Chart</li>
-            <li>Testing</li>
-            <li>KPIs
-                <ul>
-                    <li>Development KPIs
-                        <ul>
-                            <li>Percentage of planned features that got finished</li>
-                            <li>Core features implemented by deadline</li>
-                            <li>No major errors/bugs</li>
-                            <li>Meets accessibility standards</li>
-                            <li>Pages load in under 2 seconds</li>
-                        </ul>
-                    </li>
-                    <li>Testing KPIs
-                        <ul>
-                            <li>All pages tested on multiple browsers</li>
-                            <li>All forms validate correctly</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-
-    <li>Future Developments
-        <ul>
-            <li>Languages</li>
-            <li>Any other things I won't get a chance to do/isn't in the requirements list but should be</li>
-            <li>Deploy with a valid SSL certificate, to allow for HTTPS</li>
-        </ul>
-    </li>
-
-    <li>References
-        <ul>
-            <li>Try to reference a few papers for things like:
-                <ul>
-                    <li>How load times affect users</li>
-                    <li>Are homepage links important etc</li>
-                    <li>Importance of contrast and easy to read text</li>
-                </ul>
-            </li>
+            <li>Always use alt text for images (or leave empty — screen reader just reads class name)</li>
         </ul>
     </li>
 </ul>
