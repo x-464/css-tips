@@ -38,4 +38,6 @@ li{
     background-color: rgb(55, 60, 73);
     border-radius: 10px;
     border: unset;
+    color: white;
+    font-family: "Bricolage Grotesque";
 }
