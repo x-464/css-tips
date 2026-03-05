@@ -1,20 +1,24 @@
 ---
-  title: Login | Home
+title: CSS Tips
 
-  css:
-    - assets/css/global.css
-    - assets/css/login.css
+css:
+- assets/css/global.css
+- assets/css/sheet.css
 
-  js:
-    - assets/js/main.js
-    - assets/js/login.js
+js:
+- assets/js/main.js
+- assets/js/sheet.js
 ---
 
-<div class="loginWrapper">
+<div class="taskSel">
+    <button class="tasks">Task 1</button>
+    <button class="tasks">Task 2</button>
+    <button class="tasks">Task 3</button>
+</div>
 
-    <form class="loginForm">
-        <input class="passwordField" type="password" placeholder="Password" required>
-        <input class="loginButton" type="submit" value="Login">
-    </form>
-
+<div class="taskWrapper">
+    <details>
+        <summary>Title</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, vero?</p>
+    </details>
 </div>
