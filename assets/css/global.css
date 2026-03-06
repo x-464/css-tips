@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
 }
 
 .task2Reminder{
-    position: absolute;
+    position: fixed;
     left: -290px;
     top: 0;
     width: 250px;
@@ -69,7 +69,7 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
 }
 
 .arrowBG{
-    position: absolute;
+    position: fixed;
     left: 100%;
     top: 0;
     width: 75px;
