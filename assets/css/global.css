@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
 
 
 
-@media (max-width: 1100px) {
+@media (max-width: 1100px){
     body {
         padding: 0 10vw 25vh !important;
     }
@@ -124,5 +124,17 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
     }
     h1, h2, h3, h4, h5, h6, input, ul, ol{
         line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 600px){
+    .task2Reminder {
+        top: 100px !important;
+    }
+    .arrowBG{
+        border-radius: 0px 10px 10px 0px !important;
+    }
+    ul{
+        margin: 0 !important;
     }
 }
