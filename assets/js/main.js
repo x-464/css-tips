@@ -2,7 +2,6 @@
 const taskBtns = document.querySelectorAll(".tasks");
 
 let lastPressed = null;
-let arrowPos = 0;
 
 taskBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -20,14 +19,7 @@ taskBtns.forEach(btn => {
                 if (btn.classList.contains("task2")) {
 
                     document.querySelector(".arrow").addEventListener("click", () => {
-                        if (arrowPos === 0){
-                            openReminderBox();
-                            arrowPos = 1;
-                        }
-                        else{
-                            closeReminderBox();
-                            arrowPos = 0;
-                        };
+                            reminderBoxChangeState()
                     });
                 };
             });
@@ -52,20 +44,24 @@ function showText() {
 
 };
 
-function openReminderBox() {
 
+function reminderBoxChangeState() {
     const reminderBox = document.querySelector(".task2Reminder");
-    reminderBox.style.left = "0";
-
     const reminderArrow = document.querySelector(".arrow");
-    reminderArrow.style.transform = "translateX(7px) rotateY(0deg) rotateZ(-135deg)";
+    reminderBox.classList.toggle("active");
+    reminderArrow.classList.toggle("active");
 };
 
-function closeReminderBox() {
+// function openReminderBox() {
+//     const reminderBox = document.querySelector(".task2Reminder");
+//     const reminderArrow = document.querySelector(".arrow");
+//     reminderBox.classList.toggle("active");
+//     reminderArrow.classList.toggle("active");
+// };
 
-    const reminderBox = document.querySelector(".task2Reminder");
-    reminderBox.style.left = "-290px";
-
-    const reminderArrow = document.querySelector(".arrow");
-    reminderArrow.style.transform = "translateX(-7px) rotateY(180deg) rotateZ(-135deg)";
-};
+// function closeReminderBox() {
+//     const reminderBox = document.querySelector(".task2Reminder");
+//     const reminderArrow = document.querySelector(".arrow");
+//     reminderBox.classList.toggle("active");
+//     reminderArrow.classList.toggle("active");
+// };
