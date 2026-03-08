@@ -51,17 +51,3 @@ function reminderBoxChangeState() {
     reminderBox.classList.toggle("active");
     reminderArrow.classList.toggle("active");
 };
-
-// function openReminderBox() {
-//     const reminderBox = document.querySelector(".task2Reminder");
-//     const reminderArrow = document.querySelector(".arrow");
-//     reminderBox.classList.toggle("active");
-//     reminderArrow.classList.toggle("active");
-// };
-
-// function closeReminderBox() {
-//     const reminderBox = document.querySelector(".task2Reminder");
-//     const reminderArrow = document.querySelector(".arrow");
-//     reminderBox.classList.toggle("active");
-//     reminderArrow.classList.toggle("active");
-// };

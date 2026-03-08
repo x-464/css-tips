@@ -14,20 +14,19 @@
         <li class="reminderText">Do lots of testing</li>
         <li class="reminderText">Comment your code</li>
     </ol>
-
-    <!-- <div class="reminderText">Copy yesterdays work to a backup folder</div>
-    <div class="reminderText">Update day log constantly</div>
-    <div class="reminderText">Do lots of testing</div>
-    <div class="reminderText">Comment your code</div> -->
 </div>
+
+<div class="profileInfo">Install this before anything in VSC</div>
+<div class="profileInfo">Settings > Profiles > Import Profile</div>
+<a class="profileBtnWrapper" href="main.code-profile"><button class="profileBtn">VSC Profile</button></a>
 
 <ul>
     <li><strong>Default Setup</strong>
         <ul>
             <li><strong>Dynamic title and CSS loading:</strong>
                 <ul>
-                    <li>$title = "TITLE NAME IN HERE";</li>
-                    <li>$cssIncludes = ["CSS FILE HERE", "CSS FILE HERE", etc];</li>
+                    <li><code>$title = "TITLE NAME IN HERE";</code></li>
+                    <li><code>$cssIncludes = ["CSS FILE HERE", "CSS FILE HERE", etc];</code></li>
                 </ul>
             </li>
         </ul>
@@ -38,12 +37,12 @@
             <li><strong>Header</strong>
                 <ul>
                     <li>Page start (with !)</li>
-                    <li>session_start() if not exists</li>
+                    <li><code>session_start()</code> if not exists</li>
                     <li><strong>Make CSRF token if not exists</strong>
                         <ul>
-                            <li>$_SESSION['csrf_token'] = bin2hex(random_bytes(32));</li>
+                            <li><code>$_SESSION['csrf_token'] = bin2hex(random_bytes(32));</code></li>
                             <li>Check $_POST token against $_SESSION token before any server stuff</li>
-                            <li>Use hash_equals(arg1, arg2) to stop timing attacks</li>
+                            <li>Use <code>hash_equals(arg1, arg2)</code> to stop timing attacks</li>
                             <li>Token must be sent in POST request as a hidden input</li>
                             <li>Unset token after successful validation to stop reuse</li>
                         </ul>
@@ -89,15 +88,89 @@
             </li>
             <li><strong>Headings</strong>
                 <ul>
-                    <li>h1, h2, etc are important to let screen readers skip to important headings</li>
+                    <li><code>h1</code>, <code>h2</code>, etc are important to let screen readers skip to important headings</li>
                 </ul>
             </li>
             <li><strong>Semantic HTML</strong>
                 <ul>
-                    <li>&lt;header&gt;, &lt;main&gt;, etc are just as important for the same reason</li>
+                    <li><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, etc are just as important for the same reason</li>
                 </ul>
             </li>
-            <li>Always use alt text for images (or leave empty — screen reader just reads class name)</li>
+            <li>Always use alt text for images (or leave empty — screen reader just reads file name)</li>
+            <li>Label every form input, not just placeholders: <code>&lt;label for="inputId"&gt;</code></li>
+            <li>Navigation skip link: <code>&lt;a href=".main"&gt;Skip to main&lt;/a&gt;</code></li>
         </ul>
+    </li>
+
+    <li><strong>Security</strong>
+        <ul>
+            <li>Never put user inputs directly into SQL, use <code>?</code> or <code>:named</code> placeholders instead</li>
+            <li>Hash all passwords with <code>DEFAULT_PASSWORD</code></li>
+            <li>XSS Prevention: <code>htmlspecialchars();</code></li>
+        </ul>
+    </li>
+    <br>
+    <li><strong>PHP Utility</strong>
+        <pre>
+        Server variables = <code>$_SERVER</code>
+        User session variables = <code>$_POST</code>
+        Is it a post request? (after form submission)
+        <code>$_SERVER['REQUEST_METHOD'] === 'POST'</code>
+
+        <strong>Does the key exist?</strong>
+        <code>isset($_POST["variable"])</code>
+        Use coalescing to stop undefined errors:
+        Null check: <code>$x = $_POST["variable"] ?? "";</code>
+        Falsy check: <code>$x = $_POST["variable"] ?: "";</code>
+
+        <strong>Validation:</strong>
+        <code>filter_var($email, FILTER_VALIDATE_EMAIL);</code>
+        <code>filter_var($url, FILTER_VALIDATE_URL);</code>
+
+        <strong>Sanitisation:</strong>
+        <code>filter_var($input, FILTER_SANITIZE_SPECIAL_CHARS)</code>
+        <code>filter_var($input, FILTER_SANITIZE_NUMBER_INT)</code>
+
+        <strong>Trim whitespace:</strong>
+        <code>$x = trim($_POST["userInput"])</code>
+
+        <strong>String functions:</strong>
+        <code>strlen($str);</code>
+        <code>strtolower($str)/strtoupper($str);</code>
+        <code>strcontains($str, "text");</code>
+        <code>str_replace("old", "new", $str);</code>
+
+        <strong>Array functions:</strong>
+        <code>count($arr);</code>
+        <code>in_array($value, $arr, (opt:type))</code>
+
+        <strong>Termination:</strong>
+        Something wrong: <code>die($value);</code>
+        Script stop, nothing wrong: <code>exit($value);</code>
+
+        <strong>Date/Time:</strong>
+        <code>date("Y-m-d")</code> = 2000-12-31 (matches DATE sql column)
+        <code>date("y/m/d")</code>
+        <code>date("H:i:s")</code> = 23:59:00
+        <code>date("Y-m-d H:i:s")</code> = full datetime
+        <code>time()</code> = unix timestamp
+        <code>strtotime("2000-12-31")</code>
+        <code>strtotime("+1 month")</code> = date arithmetic
+
+        <strong>Date/Time format letters:</strong>
+        Y = 2026    = 4 digit year
+        y = 26      = 2 digit year
+        m = 08      = padded month
+        n = 8       = non-padded month
+        F = August  = full month name
+        M = Aug     = short month name
+        d = 01      = padded day
+        j = 1       = non-padded month
+        l = Monday  = full day name
+        D = Mon     = short day name
+        H = 23      = 24hr hour
+        i = 59      = minute
+        s = 00      = second
+        </pre>
     </li>
 </ul>

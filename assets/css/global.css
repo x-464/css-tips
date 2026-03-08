@@ -22,6 +22,12 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
     line-height: 2rem;
 }
 
+code{
+    background-color: rgb(16, 18, 22);
+    border-radius: 3px;
+    padding: 1px 4px;
+}
+
 .taskSel{
     align-self: center;
     margin: 20px 0px;
@@ -34,6 +40,28 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
 .tasks{
     padding: 15px 30px;
     margin: 0px 5px;
+    background-color: rgb(55, 60, 73);
+    border-radius: 10px;
+    border: unset;
+    cursor: pointer;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.taskWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.profileInfo{
+    text-align: center; 
+}
+.profileBtnWrapper{
+    align-self: center;
+    width: fit-content;
+}
+.profileBtn{
+    padding: 15px 30px;
+    margin: 10px 0px 15px;
     background-color: rgb(55, 60, 73);
     border-radius: 10px;
     border: unset;
@@ -93,6 +121,7 @@ h1, h2, h3, h4, h5, h6, input, ul, ol{
     border-right-color: rgb(201, 201, 201);
     transition: transform 1s ease-in-out;
     transform: translateX(-7px) rotateY(180deg) rotateZ(-135deg);
+    cursor: pointer;
 }
 .arrow.active{
     transform: translateX(7px) rotateY(0deg) rotateZ(-135deg);
