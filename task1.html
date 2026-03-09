@@ -89,6 +89,28 @@
 
     <li><strong>Functional Requirements</strong>
         <ul>
+            <pre>
+                User Accounts (Persona 1)
+                Sign up / Login
+                Browse and search products
+                View individual product information and details
+                Purchase products
+                Dashboard
+                    View current orders
+                    View order history
+                    Amend existing orders
+                    Request refunds on orders
+
+                Producer Accounts (Persona 2)
+                Sign up / Login
+                Dashboard
+                    Add, edit, and remove product listings
+                    View orders placed for their products
+                    View sales analytics (e.g. units sold, revenue)
+
+            </pre>
+        </ul>
+        <ul>
             <li><strong>User accounts</strong>
                 <ul>
                     <li>Sign up</li>
@@ -117,6 +139,12 @@
 
     <li><strong>Non-Functional Requirements</strong>
         <ul>
+            <li>Performance</li>
+            <li>Reliability, availability, maintainability and safety</li>
+            <li>Scalability</li>
+            <li>Testability</li>
+        </ul>
+        <ul>
             <li><strong>Security</strong>
                 <ul>
                     <li>CSRF Tokens</li>
@@ -130,8 +158,20 @@
                     <li>Pages protected via user access levels set at account creation</li>
                 </ul>
             </li>
-            <li>Performance</li>
-            <li>Usability</li>
+            <li>Performance:
+                <ul>
+                    <li>Pages should load within 3 seconds</li>
+                    <li>Database queries optimised (e.g., indexed columns, avoiding N+1 queries)</li>
+                </ul>
+            </li>
+
+            <li>Usability:
+                <ul>
+                    <li>Responsive design across mobile and desktop</li>
+                    <li>Users can reach any page within 3 clicks​</li>
+                    <li>Clear error messages on form validation</li>
+                </ul>
+            </li>
             <li><strong>Accessibility</strong>
                 <ul>
                     <li>Semantic HTML</li>
