@@ -57,8 +57,8 @@
                 <ul>
                     <li><strong>Give 3+ palettes, 3 main colours are easiest (black, white, highlight)</strong>
                         <ul>
-                            <li>Mention I will use slight deviations of these colours, necessary for hover, focus, active, disabled etc</li>
-                            <li>Can justify with simplicity (design trend) and accessibility</li>
+                            <li>you'll use HSL-based colour variables so that states are derived mathematically from the base colour</li>
+                            <li>Change one base colour and all states update automatically which is great for maintainability</li>
                         </ul>
                     </li>
                     <li>Use a contrast checker for text (<a href="https://webaim.org/resources/contrastchecker/">webaim</a>)</li>
@@ -178,7 +178,7 @@
                     <li>ARIA</li>
                     <li>Images (alt tags)</li>
                     <li>Turning off animations for reduced motion</li>
-                    <li>Colours</li>
+                    <li>Contrasting Colours</li>
                     <li>(persona 3)</li>
                 </ul>
             </li>
@@ -249,14 +249,119 @@
         <ul>
             <li>Gantt Chart</li>
             <li>Testing</li>
+            <table border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Test ID</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Input / Steps</th>
+                        <th>Expected Result</th>
+                        <th>Actual Result</th>
+                        <th>Pass/Fail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TC01</td>
+                        <td>Login – normal (valid credentials)</td>
+                        <td>Functional</td>
+                        <td>Enter correct email and password, click login</td>
+                        <td>Redirected to dashboard</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC02</td>
+                        <td>Login – erroneous (wrong password)</td>
+                        <td>Functional</td>
+                        <td>Enter correct email, incorrect password, click login</td>
+                        <td>Error message displayed, no redirect</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC03</td>
+                        <td>Login – erroneous (empty fields)</td>
+                        <td>Functional</td>
+                        <td>Leave email and password blank, click login</td>
+                        <td>Validation error shown</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC04</td>
+                        <td>Password – boundary (minimum length)</td>
+                        <td>Functional</td>
+                        <td>Register with password exactly at minimum character limit</td>
+                        <td>Account created successfully</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC05</td>
+                        <td>Password – erroneous (below minimum length)</td>
+                        <td>Functional</td>
+                        <td>Register with password one character below minimum</td>
+                        <td>Validation error shown</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC06</td>
+                        <td>SQL injection attempt on login form</td>
+                        <td>Security</td>
+                        <td>Enter <code>' OR '1'='1</code> into email field</td>
+                        <td>Login fails, no DB error exposed</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC07</td>
+                        <td>Unauthorised access to producer dashboard</td>
+                        <td>Security</td>
+                        <td>Attempt to navigate to /producer/dashboard as a user account</td>
+                        <td>Redirected or shown access denied</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC08</td>
+                        <td>Page load performance – homepage</td>
+                        <td>Performance</td>
+                        <td>Load homepage and measure load time</td>
+                        <td>Page loads in under 2 seconds</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC09</td>
+                        <td>Cross-browser – Chrome</td>
+                        <td>Usability</td>
+                        <td>Open all main pages in Chrome</td>
+                        <td>All pages render correctly</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TC10</td>
+                        <td>Accessibility – keyboard navigation</td>
+                        <td>Accessibility</td>
+                        <td>Navigate entire site using only Tab and Enter keys</td>
+                        <td>All interactive elements reachable and focusable</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
             <li><strong>KPIs</strong>
                 <ul>
                     <li><strong>Development KPIs</strong>
                         <ul>
-                            <li>Percentage of planned features that got finished</li>
-                            <li>Core features implemented by deadline</li>
-                            <li>No major errors/bugs</li>
-                            <li>Meets accessibility standards</li>
+                            <li>At least 80% of planned features finished by deadline</li>
+                            <li>100% of core features implemented by deadline</li>
+                            <li>Zero critical bugs at submission</li>
+                            <li>Meets accessibility standards like WCAG AA</li>
                             <li>Pages load in under 2 seconds</li>
                         </ul>
                     </li>
@@ -264,6 +369,10 @@
                         <ul>
                             <li>All pages tested on multiple browsers</li>
                             <li>All forms validate correctly</li>
+                            <li>User signup, login, etc tested for both account types</li>
+                            <li>All access controlled pages reject unauthorised users</li>
+                            <li>All SQL inputs tested against injection attempts</li>
+                            <li>Responsive design tested on mobile and desktop</li>
                         </ul>
                     </li>
                 </ul>
