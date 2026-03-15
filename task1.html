@@ -1,6 +1,7 @@
 <ul>
     <li><strong>User Personas</strong>
         <ul>
+            <li>potential improvements needed</li>
             <li>What are user personas and why are they necessary?</li>
             <li><strong>3 Personas</strong>
                 <ol>
@@ -12,81 +13,8 @@
         </ul>
     </li>
 
-    <li><strong>Design Language</strong>
-        <ul>
-            <li><strong>Colour Palettes</strong>
-                <ul>
-                    <li><strong>Give 3+ palettes, 3 main colours are easiest (black, white, highlight)</strong>
-                        <ul>
-                            <li>you'll use HSL-based colour variables so that states are derived mathematically from the base colour</li>
-                            <li>Change one base colour and all states update automatically which is great for maintainability</li>
-                        </ul>
-                    </li>
-                    <li>Use a contrast checker for text (<a href="https://webaim.org/resources/contrastchecker/">webaim</a>)</li>
-                    <li>High contrast colours for persona 3</li>
-                </ul>
-            </li>
-            <li><strong>Fonts</strong>
-                <ul>
-                    <li>Show 3 – 5 fonts for both serif and sans-serif</li>
-                    <li>Show demo of fonts</li>
-                    <li>Give a short description and how you feel about them</li>
-                    <li><strong>Font Choice</strong>
-                        <ul>
-                            <li>Link back to persona 3, easy reading etc</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-
-    <li><strong>Functional Requirements</strong>
-        <ul>
-            <pre>
-                User Accounts
-                Browse and search products
-                View individual product information and details
-                Purchase products
-
-                Producer Accounts (Persona 2)
-                Dashboard
-                    Add, edit, and remove product listings
-                    View orders placed for their products
-                    View sales analytics (e.g. units sold, revenue)
-
-            </pre>
-        </ul>
-    </li>
-
     <li><strong>Non-Functional Requirements</strong>
         <ul>
-            <li>Performance</li>
-            <li>Reliability, availability, maintainability and safety</li>
-            <li>Scalability</li>
-            <li>Testability</li>
-        </ul>
-        <ul>
-            <li><strong>Security</strong>
-                <ul>
-                    <li>CSRF Tokens</li>
-                    <li>Use hash_equals() to stop timing attacks related to ===</li>
-                    <li>htmlspecialchars() on user inputs/$_GET requests</li>
-                    <li>Email validation</li>
-                    <li>Password rules</li>
-                    <li>Password hashing</li>
-                    <li>HTTPS</li>
-                    <li>SQL injection prevention by using '?' placeholders in PDO requests</li>
-                    <li>Pages protected via user access levels set at account creation</li>
-                </ul>
-            </li>
-            <li>Performance:
-                <ul>
-                    <li>Pages should load within 3 seconds</li>
-                    <li>Database queries optimised (e.g., indexed columns, avoiding N+1 queries)</li>
-                </ul>
-            </li>
-
             <li>Usability:
                 <ul>
                     <li>Responsive design across mobile and desktop</li>
@@ -94,146 +22,22 @@
                     <li>Clear error messages on form validation</li>
                 </ul>
             </li>
-            <li><strong>Accessibility</strong>
-                <ul>
-                    <li>Semantic HTML</li>
-                    <li>ARIA</li>
-                    <li>Images (alt tags)</li>
-                    <li>Turning off animations for reduced motion</li>
-                    <li>Contrasting Colours</li>
-                    <li>(persona 3)</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-
-    <li><strong>Wireframes</strong>
-        <ul>
-            <li><strong>Show all necessary wireframes</strong>
-                <ul>
-                    <li>Link</li>
-                    <li>Image</li>
-                    <li>Description</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-
-    <li><strong>Algorithms</strong>
-        <ul>
-            <li>Show all necessary flowcharts</li>
         </ul>
     </li>
 
     <li><strong>Development Plan</strong>
         <ul>
-            <li>Gantt Chart</li>
-            <li>Testing</li>
-            <table border="1" cellpadding="8" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>Test ID</th>
-                        <th>Description</th>
-                        <th>Type</th>
-                        <th>Input / Steps</th>
-                        <th>Expected Result</th>
-                        <th>Actual Result</th>
-                        <th>Pass/Fail</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>TC01</td>
-                        <td>Login – normal (valid credentials)</td>
-                        <td>Functional</td>
-                        <td>Enter correct email and password, click login</td>
-                        <td>Redirected to dashboard</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC02</td>
-                        <td>Login – erroneous (wrong password)</td>
-                        <td>Functional</td>
-                        <td>Enter correct email, incorrect password, click login</td>
-                        <td>Error message displayed, no redirect</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC03</td>
-                        <td>Login – erroneous (empty fields)</td>
-                        <td>Functional</td>
-                        <td>Leave email and password blank, click login</td>
-                        <td>Validation error shown</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC04</td>
-                        <td>Password – boundary (minimum length)</td>
-                        <td>Functional</td>
-                        <td>Register with password exactly at minimum character limit</td>
-                        <td>Account created successfully</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC05</td>
-                        <td>Password – erroneous (below minimum length)</td>
-                        <td>Functional</td>
-                        <td>Register with password one character below minimum</td>
-                        <td>Validation error shown</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC06</td>
-                        <td>SQL injection attempt on login form</td>
-                        <td>Security</td>
-                        <td>Enter <code>' OR '1'='1</code> into email field</td>
-                        <td>Login fails, no DB error exposed</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC07</td>
-                        <td>Unauthorised access to producer dashboard</td>
-                        <td>Security</td>
-                        <td>Attempt to navigate to /producer/dashboard as a user account</td>
-                        <td>Redirected or shown access denied</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC08</td>
-                        <td>Page load performance – homepage</td>
-                        <td>Performance</td>
-                        <td>Load homepage and measure load time</td>
-                        <td>Page loads in under 2 seconds</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC09</td>
-                        <td>Cross-browser – Chrome</td>
-                        <td>Usability</td>
-                        <td>Open all main pages in Chrome</td>
-                        <td>All pages render correctly</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>TC10</td>
-                        <td>Accessibility – keyboard navigation</td>
-                        <td>Accessibility</td>
-                        <td>Navigate entire site using only Tab and Enter keys</td>
-                        <td>All interactive elements reachable and focusable</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <li><strong>Testing Types</strong>
+                <ul>
+                    <li>normal</li>
+                    <li>erroneous</li>
+                    <li>boundary</li>
+                    <li>security</li>
+                    <li>usability</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
             <li><strong>KPIs</strong>
                 <ul>
                     <li><strong>Development KPIs</strong>
